@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class AlbumsViewController: UIViewController {
 
     // MARK: - Outlets
     
@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         setupHierarchy()
         setupLayout()
-
     }
 
     // MARK: - Setup
