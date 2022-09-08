@@ -1,5 +1,5 @@
 //
-//  FirstTabBarViewController.swift
+//  ForYouViewController.swift
 //  iOS Photos App
 //
 //  Created by Радик Ахметзянов on 07.09.2022.
@@ -7,12 +7,10 @@
 
 import UIKit
 
-class LibraryTabBarViewController: UIViewController {
+class ForYouTabBarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
-
+        view.backgroundColor = .systemGray3
     }
-
 }

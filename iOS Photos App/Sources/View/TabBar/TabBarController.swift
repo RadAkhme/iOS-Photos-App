@@ -20,7 +20,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     func setupTabBarController() {
         tabBar.tintColor = .systemBlue
-        tabBar.backgroundColor = .white
+        tabBar.backgroundColor = .systemBackground
     }
     
     func setupTabBarViewControllers() {
@@ -40,7 +40,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let fourthIcon = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
         fourth.tabBarItem = fourthIcon
         
-        let controllers = [third, first, second, fourth]
+        let controllers = [first, second, third, fourth]
         self.setViewControllers(controllers, animated: true)
     }
 }
