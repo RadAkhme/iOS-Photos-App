@@ -36,7 +36,7 @@ class CollectionViewCell: UICollectionViewListCell {
     
     private lazy var photoCount: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = .gray
         return label
     }()
@@ -68,14 +68,13 @@ class CollectionViewCell: UICollectionViewListCell {
         }
         
         imageContainer.snp.makeConstraints { make in
-            make.left.equalTo(contentView).offset(7)
+            make.left.equalTo(contentView).offset(15)
             make.centerY.equalTo(contentView)
             make.height.equalTo(contentView).dividedBy(2)
-            make.width.equalTo(imageContainer.snp.height)
         }
         
         title.snp.makeConstraints { make in
-            make.left.equalTo(imageContainer).offset(32)
+            make.left.equalTo(imageContainer).offset(25)
             make.centerY.equalTo(contentView)
         }
         
@@ -86,7 +85,7 @@ class CollectionViewCell: UICollectionViewListCell {
     }
     
     func configuration(model: CompositionalModel) {
-        self.icon.image = model.image
+        self.icon.image = UIImage(named: model.image ?? "")
         self.title.text = model.mainTitle
         self.photoCount.text = String("\(model.photoCount ?? 0)")
     }

@@ -11,10 +11,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = self
         title = "Альбомы"
         navigationController?.navigationBar.prefersLargeTitles = true
-        self.selectedIndex = 2
         setupTabBarController()
         setupTabBarViewControllers()
     }

@@ -27,6 +27,7 @@ class AlbumsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        title = "Альбомы"
         navigationController?.navigationBar.prefersLargeTitles = true
         setupHierarchy()
         setupLayout()
@@ -71,10 +72,9 @@ class AlbumsViewController: UIViewController {
             case 1:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(1))
                 let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-                layoutItem.contentInsets = .init(top: 5, leading: 5, bottom: 10, trailing: 5)
+                layoutItem.contentInsets = .init(top: 5, leading: 5, bottom: 10, trailing: 0)
                 
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 / 2.1),
-                                                       heightDimension: .fractionalWidth(1 / 1.7))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 / 2.1), heightDimension: .fractionalWidth(1 / 1.7))
                 let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
                 layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
                 
@@ -98,9 +98,8 @@ class AlbumsViewController: UIViewController {
                 
                 let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
                 layoutSection.orthogonalScrollingBehavior = .continuous
-                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                 
-                let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(30))
+                let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(50))
                 let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
                 layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
                 

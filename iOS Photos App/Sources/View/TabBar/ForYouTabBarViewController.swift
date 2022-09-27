@@ -12,5 +12,7 @@ class ForYouTabBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray3
+        title = "Альбомы"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

@@ -12,6 +12,7 @@ class SearchTabBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray5
-    
+        title = "Альбомы"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
