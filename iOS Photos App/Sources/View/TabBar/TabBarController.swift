@@ -11,7 +11,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = self
         title = "Альбомы"
         navigationController?.navigationBar.prefersLargeTitles = true
         setupTabBarController()
@@ -42,5 +41,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         
         let controllers = [first, second, third, fourth]
         self.setViewControllers(controllers, animated: true)
+        self.selectedIndex = 2
     }
 }

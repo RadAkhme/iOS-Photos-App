@@ -7,16 +7,20 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class CollectionViewCell: UICollectionViewListCell {
     
     static let identifier = "table collection"
     
     // MARK: - Outlets
     
+    private let imageContainer: UIView = {
+        let container = UIView()
+        return container
+    }()
+    
     private let icon: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 3
         imageView.contentMode = .scaleAspectFill
         imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         imageView.tintColor = .systemBlue
@@ -32,7 +36,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     private lazy var photoCount: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = .gray
         return label
     }()
@@ -52,20 +56,25 @@ class CollectionViewCell: UICollectionViewCell {
     // MARK: - Setup
     
     private func setupHierarchy() {
-        contentView.addSubview(icon)
+        imageContainer.addSubview(icon)
+        contentView.addSubview(imageContainer)
         contentView.addSubview(title)
         contentView.addSubview(photoCount)
     }
     
     private func setupLayout() {
         icon.snp.makeConstraints { make in
-            make.left.equalTo(contentView).dividedBy(2)
+            make.center.equalTo(imageContainer)
+        }
+        
+        imageContainer.snp.makeConstraints { make in
+            make.left.equalTo(contentView).offset(15)
             make.centerY.equalTo(contentView)
-
+            make.height.equalTo(contentView).dividedBy(2)
         }
         
         title.snp.makeConstraints { make in
-            make.left.equalTo(icon.snp.right).offset(20)
+            make.left.equalTo(imageContainer).offset(25)
             make.centerY.equalTo(contentView)
         }
         
@@ -76,7 +85,7 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     func configuration(model: CompositionalModel) {
-        self.icon.image = model.image
+        self.icon.image = UIImage(named: model.image ?? "")
         self.title.text = model.mainTitle
         self.photoCount.text = String("\(model.photoCount ?? 0)")
     }

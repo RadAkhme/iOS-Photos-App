@@ -12,6 +12,7 @@ class LibraryTabBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
+        title = "Альбомы"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
-
 }
