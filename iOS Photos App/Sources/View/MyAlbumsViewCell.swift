@@ -14,13 +14,13 @@ class MyAlbumsViewCell: UICollectionViewCell {
     // MARK: - Outlets
     
     private let albumImage: UIImageView = {
-            let imageView = UIImageView()
-            imageView.clipsToBounds = true
-            imageView.layer.cornerRadius = 4
-            imageView.contentMode = .scaleAspectFill
-            imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-            return imageView
-        }()
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 4
+        imageView.contentMode = .scaleAspectFill
+        imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        return imageView
+    }()
     
     private lazy var albumTitle: UILabel = {
         let label = UILabel()
